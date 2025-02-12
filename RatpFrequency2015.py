@@ -1,25 +1,27 @@
 import requests as req
+import random
 
 def GetRatpFrequency2015():
     url = "https://data.ratp.fr/api/explore/v2.1/catalog/datasets/trafic-annuel-entrant-par-station-du-reseau-ferre-2015/records?limit=100"
+    
+    SelectedStations = []
+    while len(SelectedStations) <= 20:
+        RandomStationRank = random.randint(1,20)
+        SelectedStations.append(RandomStationRank)
 
-    try:
-        res = req.get(url)
+    print(SelectedStations)
 
-        if res.status_code == 200:
-            freq = res.json()
-            for station in freq.get("results",[]):
-                print(station['station'])
-                traffic_total = 0
-                traffic_total += station['trafic']
-                print(traffic_total)
-        else:
-            print("Error", res.status_code)
-            return None
-    except req.exceptions.RequestException as e:
-  
-        print('Error:', e)
-        return None
+    res = req.get(url)
+    if res.status_code == 200:
+        data = res.json()
+        for i in SelectedStations:
+            results = data.get("results", [])
+            print(results[i]['station'])
+
+        
+            
+            
+            
 
         
 
