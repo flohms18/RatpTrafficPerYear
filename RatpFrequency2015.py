@@ -9,7 +9,10 @@ def GetRatpFrequency2015():
         if res.status_code == 200:
             freq = res.json()
             for station in freq.get("results",[]):
-                print(station)
+                print(station['station'])
+                traffic_total = 0
+                traffic_total += station['trafic']
+                print(traffic_total)
         else:
             print("Error", res.status_code)
             return None
