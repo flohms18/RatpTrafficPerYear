@@ -2,7 +2,7 @@ import requests as req
 import random
 
 def GetRatpFrequency2015():
-    url = "https://data.ratp.fr/api/explore/v2.1/catalog/datasets/trafic-annuel-entrant-par-station-du-reseau-ferre-2015/records?limit=100"
+    url = "https://data.ratp.fr/api/explore/v2.1/catalog/datasets/trafic-annuel-entrant-par-station-du-reseau-ferre-2015/records"
     
     SelectedStations = []
     while len(SelectedStations) <= 20:
