@@ -8,8 +8,6 @@ with open('trafic-annuel-entrant-par-station-du-reseau-ferre-2015.json','r') as 
     for subway in data:
         if subway['reseau'] == 'RER':
             TotalRER += subway['trafic']
-            if len(str(TotalRER)) <= 2:
-                print("Hello")
         elif subway['reseau'] == 'M\u00e9tro':
             TotalMetro += subway['trafic']
         TotalTrafic = TotalMetro + TotalRER
