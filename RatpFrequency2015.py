@@ -8,7 +8,7 @@ def GetRatpFrequency2015():
 
         if res.status_code == 200:
             freq = res.json()
-            for station in freq:
+            for station in freq.get("results",[]):
                 print(station)
         else:
             print("Error", res.status_code)
