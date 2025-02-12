@@ -24,8 +24,8 @@ def GetRatpFrequency2015():
             StationName = results[i]['station']
             StationTrafic = results[i]["trafic"]
             print(results[i]["trafic"])
-            bar = plt.bar(StationName, StationTrafic,width=0.5,color="green")
-            
+            plt.bar(StationName, StationTrafic,width=0.5,color="#00AA91")
+            plt.xticks(rotation=90)
 
         plt.xlabel("Station Name")   
         plt.ylabel("Traffic")
