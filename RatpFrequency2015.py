@@ -17,7 +17,7 @@ for check in Years:
             TotalTrafic = TotalMetro + TotalRER
 
         print(f"Trafic en {check} - RER:  {TotalRER}")
-        print(f"Trafic en {check} - Métro:  {TotalMetro}")
+        print(f"Trafic en {check} - Métro:  {TotalMetro}")
         print(f"Total Trafic en {check}:  {TotalTrafic}")
 
 import json
