@@ -1,6 +1,7 @@
 import json
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 Total = {}
 
@@ -22,7 +23,19 @@ for i in range(2015, 2021):
         print(f"Trafic Métro en {check}: {Total[i]['metro']}")
         print(f"Trafic RER en {check}: {Total[i]['rer']}")
     
-    
+df = pd.DataFrame({
+    'metro': [Total[i]['metro'] for i in range(2015, 2021)],
+    'rer': [Total[i]['rer'] for i in range(2015, 2021)]
+}, index=range(2015, 2021))
+
+print(df)
+ax = df.plot(kind='bar', stacked=True, title="Trafic Métro et RER par année", figsize=(10, 6))  
+ax.set_xlabel("Année")
+ax.set_ylabel("Trafic")
+ax.legend(title="Réseau")
+plt.show()
+
+
 
 
 
