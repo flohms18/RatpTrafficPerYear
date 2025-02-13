@@ -1,5 +1,6 @@
 import json
 import matplotlib.pyplot as plt
+import numpy as np
 
 Total = {}
 
@@ -20,6 +21,7 @@ for i in range(2015, 2021):
                 Total[i]['metro'] += subway['trafic']
         print(f"Trafic Métro en {check}: {Total[i]['metro']}")
         print(f"Trafic RER en {check}: {Total[i]['rer']}")
+
 
 
 
