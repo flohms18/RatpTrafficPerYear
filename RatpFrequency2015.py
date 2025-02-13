@@ -1,9 +1,9 @@
 import json
 
-Years = [2015,2016,2017]
+Years = [2015,2016,2017,2018,2019,2020]
 
 for check in Years:
-    filename = f'trafic-annuel-entrant-par-station-du-reseau-ferre-{check}.json'    
+    filename = f'./trafic-json-ratp/trafic-annuel-entrant-par-station-du-reseau-ferre-{check}.json'    
     with open(filename, 'r') as file:        
         data = json.load(file)
         TotalTrafic = 0
