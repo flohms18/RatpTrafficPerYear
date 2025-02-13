@@ -1,6 +1,6 @@
 import json
 
-Years = [2015,2016]
+Years = [2015,2016,2017]
 
 for check in Years:
     filename = f'trafic-annuel-entrant-par-station-du-reseau-ferre-{check}.json'    
