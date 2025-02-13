@@ -10,8 +10,7 @@ for i in range(2015, 2021):
         'rer': 0,
         'year' : i
     }
-    check = i
-    filename = f'./trafic-json-ratp/trafic-annuel-entrant-par-station-du-reseau-ferre-{check}.json'
+    filename = f'./trafic-json-ratp/trafic-annuel-entrant-par-station-du-reseau-ferre-{i}.json'
     with open(filename,'r') as file:
         data = json.load(file)
         for subway in data:
@@ -19,8 +18,8 @@ for i in range(2015, 2021):
                 Total[i]['rer'] += subway['trafic']
             elif subway['reseau'] == 'M\u00e9tro': 
                 Total[i]['metro'] += subway['trafic']
-        print(f"Trafic Métro en {check}: {Total[i]['metro']}")
-        print(f"Trafic RER en {check}: {Total[i]['rer']}")
+        print(f"Trafic Métro en {i}: {Total[i]['metro']}")
+        print(f"Trafic RER en {i}: {Total[i]['rer']}")
     
 df = pd.DataFrame({
     'Metro': [Total[i]['metro'] for i in range(2015, 2021)],
