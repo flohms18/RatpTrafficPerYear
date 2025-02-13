@@ -9,6 +9,7 @@ for check in Years:
     filename = f'./trafic-json-ratp/trafic-annuel-entrant-par-station-du-reseau-ferre-{check}.json'    
     with open(filename, 'r') as file:        
         data = json.load(file)
+        totaux = {annee: {"RER": 0, "Metro": 0} for annee in range(2015, 2020)}
         TotalRER2015, TotalMetro2015 = 0
         TotalRER2016, TotalMetro2016 = 0
         TotalRER2017, TotalMetro2017 = 0
